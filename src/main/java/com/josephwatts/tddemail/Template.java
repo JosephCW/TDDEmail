@@ -1,17 +1,18 @@
 package com.josephwatts.tddemail;
 
 public class Template {
-
-	public Template(String string) {
-		// TODO Auto-generated constructor stub
+	private String templateText;
+	private String variableValue;
+	
+	public Template(String templateText) {
+		this.templateText = templateText;
 	}
 
-	public void set(String string, String string2) {
-		// TODO Auto-generated method stub
+	public void set(String variable, String value) {
+		this.variableValue = value;
 	}
 
-	public Object evaluate() {
-		// TODO Auto-generated method stub
-		return null;
+	public String evaluate() {
+		return templateText.replaceAll("\\$\\{name\\}", variableValue);
 	}
 }
